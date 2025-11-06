@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="UniversalYogaCustomerApp.Views.BookingPage"
+             Title="Book Your Class">
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Book Your Yoga Class"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource Primary}" />
+
+            <!-- Course summary -->
+            <Frame BackgroundColor="#E8EAF6" CornerRadius="10" Padding="10">
+                <VerticalStackLayout>
+                    <Label x:Name="CourseLabel"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                    <Label x:Name="DayLabel" />
+                    <Label x:Name="TimeLabel" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Booking form -->
+            <Entry x:Name="NameEntry" Placeholder="Your Name" />
+            <Entry x:Name="EmailEntry" Placeholder="Email Address" Keyboard="Email" />
+            <DatePicker x:Name="DatePicker" MinimumDate="{x:Static sys:DateTime.Today}"
+                        xmlns:sys="clr-namespace:System;assembly=mscorlib" />
+
+            <Button Text="Confirm Booking"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    Clicked="OnBookConfirmClicked" />
+
+            <Label x:Name="StatusLabel"
+                   Text=""
+                   FontAttributes="Italic"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource Accent}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

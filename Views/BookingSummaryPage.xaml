@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversalYogaCustomerApp.Views.BookingSummaryPage"
+             Title="My Bookings">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="My Bookings"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource Primary}" />
+
+        <CollectionView x:Name="BookingCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BackgroundColor="#E8EAF6" CornerRadius="10">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding CourseName}" FontAttributes="Bold" FontSize="18" />
+                            <Label Text="{Binding Day}" />
+                            <Label Text="{Binding Time}" />
+                            <Label Text="{Binding SelectedDate, StringFormat='Date: {0:dd/MM/yyyy}'}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Clear All Bookings"
+                BackgroundColor="Crimson"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="45"
+                Clicked="OnClearBookingsClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

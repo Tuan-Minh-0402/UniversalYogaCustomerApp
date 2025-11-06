@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversalYogaCustomerApp.Views.CoursesPage"
+             Title="Yoga Courses">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <!-- Search bar -->
+        <SearchBar Placeholder="Search by course type or day"
+                   x:Name="CourseSearchBar"
+                   TextChanged="OnSearchTextChanged"
+                   BackgroundColor="#EFEFEF"
+                   HeightRequest="40"/>
+
+        <!-- Courses list -->
+        <CollectionView x:Name="CoursesCollectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCourseSelected">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="6" Padding="10" BackgroundColor="#E8EAF6" CornerRadius="12" BorderColor="#DDD">
+                        <Grid ColumnDefinitions="2*, Auto">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="{Binding Type}" FontAttributes="Bold" FontSize="18" />
+                                <Label Text="{Binding DayOfWeek}" />
+                                <Label Text="{Binding Time}" />
+                                <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" />
+                            </VerticalStackLayout>
+
+                            <Button Text="Book"
+                                    Grid.Column="1"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    TextColor="White"
+                                    Padding="10,5"
+                                    CornerRadius="8"
+                                    Clicked="OnBookClicked"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
