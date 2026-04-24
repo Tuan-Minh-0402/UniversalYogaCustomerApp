@@ -2,18 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniversalYogaCustomerApp.Views.CoursesPage"
-             Title="Yoga Courses">
+             Title="Available Classes">
 
     <VerticalStackLayout Padding="20" Spacing="15">
 
-        <!-- Search bar -->
-        <SearchBar Placeholder="Search by course type or day"
+        <SearchBar Placeholder="Search by class type, day, or time"
                    x:Name="CourseSearchBar"
                    TextChanged="OnSearchTextChanged"
                    BackgroundColor="#EFEFEF"
                    HeightRequest="40"/>
 
-        <!-- Courses list -->
+        <Label x:Name="StatusLabel"
+               TextColor="Gray"
+               IsVisible="False"
+               FontAttributes="Italic" />
+
         <CollectionView x:Name="CoursesCollectionView"
                         SelectionMode="Single"
                         SelectionChanged="OnCourseSelected">
@@ -23,9 +26,11 @@
                     <Frame Margin="6" Padding="10" BackgroundColor="#E8EAF6" CornerRadius="12" BorderColor="#DDD">
                         <Grid ColumnDefinitions="2*, Auto">
                             <VerticalStackLayout Grid.Column="0">
-                                <Label Text="{Binding Type}" FontAttributes="Bold" FontSize="18" />
-                                <Label Text="{Binding DayOfWeek}" />
-                                <Label Text="{Binding Time}" />
+                                <Label Text="{Binding ClassType}" FontAttributes="Bold" FontSize="18" />
+                                <Label Text="{Binding Day}" />
+                                <Label Text="{Binding Date, StringFormat='Date: {0}'}" />
+                                <Label Text="{Binding Time, StringFormat='Time: {0}'}" />
+                                <Label Text="{Binding Teacher, StringFormat='Teacher: {0}'}" />
                                 <Label Text="{Binding Price, StringFormat='Price: {0:C}'}" />
                             </VerticalStackLayout>
 

@@ -1,35 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="UniversalYogaCustomerApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:UniversalYogaCustomerApp.Views">
 
-    <ShellContent Title="Home" 
+    <ShellContent
+        Title="Home"
         ContentTemplate="{DataTemplate local:HomePage}" />
 
     <ShellContent
-        Title="Courses"
+        Title="Available Classes"
         ContentTemplate="{DataTemplate local:CoursesPage}"
         Route="CoursesPage" />
 
     <ShellContent
-        Title="Book a Session"
-        ContentTemplate="{DataTemplate local:BookingPage}"
-        Route="BookingPage" />
+        Title="Checkout"
+        ContentTemplate="{DataTemplate local:CheckoutPage}"
+        Route="CheckoutPage" />
 
-    <ShellContent Title="Contact"
+    <ShellContent
+        Title="Contact"
         ContentTemplate="{DataTemplate local:ContactPage}" />
-
-    <ShellContent Title="My Bookings"
-              ContentTemplate="{DataTemplate local:BookingSummaryPage}" />
-
-
-    <TabBar>
-        <ShellContent Title="Courses" ContentTemplate="{DataTemplate local:CoursesPage}" />
-        <ShellContent Title="Book" ContentTemplate="{DataTemplate local:BookingPage}" />
-    </TabBar>
-
-
 
 </Shell>

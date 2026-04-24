@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversalYogaCustomerApp.Views.CheckoutPage"
+             Title="Checkout">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Label Text="Checkout"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="#E8EAF6" Padding="12" CornerRadius="10">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Selected Class" FontAttributes="Bold" FontSize="16" />
+                    <Label x:Name="ClassTypeLabel" />
+                    <Label x:Name="DayLabel" />
+                    <Label x:Name="DateLabel" />
+                    <Label x:Name="TimeLabel" />
+                    <Label x:Name="TeacherLabel" />
+                    <Label x:Name="PriceLabel" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Entry x:Name="NameEntry" Placeholder="Your name" />
+            <Entry x:Name="EmailEntry" Placeholder="Your email" Keyboard="Email" />
+
+            <Button Text="Submit Booking"
+                    HeightRequest="44"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    Clicked="OnSubmitBookingClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
