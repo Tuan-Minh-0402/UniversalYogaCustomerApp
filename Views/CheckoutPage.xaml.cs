@@ -1,5 +1,4 @@
-﻿using AddressBook;
-using UniversalYogaCustomerApp.Models;
+﻿using UniversalYogaCustomerApp.Models;
 using UniversalYogaCustomerApp.Services;
 
 namespace UniversalYogaCustomerApp.Views;
